@@ -31,7 +31,7 @@ public class JWTUtil {
     //check JWT Token, som modtages fra client
     public String validateTokenAndRetrieveSubject(String token)throws JWTVerificationException {
         JWTVerifier verifier = JWT.require(Algorithm.HMAC256(secret))
-                .withSubject("User Details")
+                .withSubject("User details")
                 .withIssuer("MYJWTApp/example/KEA")
                 .build();
         DecodedJWT jwt = verifier.verify(token);
